@@ -3,7 +3,7 @@
     top: 0;
     position: fixed;
     background: black;
-    height: 80px;
+    /*height: 80px;*/
     display: flex;
     justify-content: center;
     font-size: 1em;
@@ -18,8 +18,16 @@
     transition-duration: 500ms;
 }
 
-#header.down {
-    top: -6rem;
+/*#header.down {*/
+/*    top: -6rem;*/
+/*}*/
+
+.show {
+    height: 80px;
+}
+
+.hide {
+    height: 0px;
 }
 
 #NavbarContainer {

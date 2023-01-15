@@ -8,7 +8,7 @@ const Navbar = () => {
     // const b = (a === "down") ? 0 : 100;
     // useEffect(() => {}, [a,b])
     return (
-    <div id={`Nav ${ scrollDirection === "down" ? "hide" : "show"}`} >
+    <div id={'Nav'} className={`${ scrollDirection === "down" ? "hide" : "show"}`} >
         <div id={'NavbarContainer'} >
             <div id={'NavMenu'}>
                 <div className={'NavItem'}>
