@@ -1,5 +1,10 @@
+:root {
+    --nav_height: 80px;
+    --highlight_border: 6px;
+}
+
 #Nav {
-    height: 80px;
+    height: var(--nav_height);
     width: 100%;
 
     position: fixed;
@@ -20,7 +25,7 @@
 }
 
 .hide {
-    top: -80px;
+    top: calc(-1*var(--nav_height));
 }
 
 #NavbarContainer {
@@ -58,30 +63,29 @@
     display: flex;
     align-items: center;
 
-    height: calc(100% - 3*2px);
+    height: calc(100% - var(--highlight_border));
     cursor: pointer;
+}
 
-    /*:hover, .active {*/
-    /*    border-bottom: 6px solid red;*/
-    /*}*/
+.NavLinks:hover, .active {
+    border-bottom: var(--highlight_border) solid red;
 }
 
 .NavBlog {
+    color: black;
     text-decoration: none;
     display: flex;
     align-items: center;
 
-    height: calc(80% - 3*2px);
+    height: calc(80% - var(--highlight_border));
     cursor: pointer;
 
     background: aqua;
     width: calc(max(100vw / 20, 90px));
     border-radius: 10px;
     justify-content: center;
+}
 
-    /*margin-right: -90px;*/
-
-    /*:hover, .active {*/
-    /*    color: blue;*/
-    /*}*/
+.NavBlog:hover, .active {
+    color: blue;
 }

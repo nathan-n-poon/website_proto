@@ -1,23 +1,30 @@
+:root {
+    --img_height: 400px;
+}
+
 #AboutMeContainer {
     height: 100vh;
     width: 100vw;
-    justify-content: space-between;
-    margin: 0;
     background: #F0EAD6;
 
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+
+    justify-content: space-evenly;
     align-items: center;
 }
 
 #AboutMeContainer img {
-    height: 400px;
-    margin-top: 50px;
-    margin-left: 150px;
+    height: var(--img_height);
+    border-radius: 40px;
+
+    margin-top: 80px;
 }
 
 #description {
-    margin-top: -250px;
-    margin-right: 250px;
+    margin-top: -400px;
+}
 
+#description li {
+    list-style-type: none;
 }
