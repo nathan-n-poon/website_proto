@@ -10,7 +10,7 @@ function App() {
 
    <BrowserRouter>
        <Helmet>
-           <title>Credits: </title>
+           <title>Nathan Poon</title>
        </Helmet>
        <Home/>
    </BrowserRouter>

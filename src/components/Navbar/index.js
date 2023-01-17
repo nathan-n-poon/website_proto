@@ -3,12 +3,14 @@ import React, { useState, useEffect } from "react";
 import './styles.css';
 import {Link as LinkScroll} from 'react-scroll';
 
+
 const Navbar = () => {
-    const scrollDirection = useScrollDirection();
     // const b = (a === "down") ? 0 : 100;
     // useEffect(() => {}, [a,b])
+    const [scrollDirection, scrollPos] = useScrollDirection();
+
     return (
-    <div id={'Nav'} className={`${ scrollDirection === "down" ? "hide" : "show"}`} >
+    <div id={'Nav'} className={`${ ((scrollDirection === "down") || (scrollPos > 0)) ? "hide" : "show"}`} >
         <div id={'NavbarContainer'} >
             <div id={'NavMenu'}>
                 <div className={'NavItem'}>
@@ -31,7 +33,7 @@ const Navbar = () => {
                 {/*<NavItem>*/}
                 {/*    <BlogArea>*/}
                 {/*        <MyHr></MyHr>*/}
-                <div className={'NavBlog'} to={"blog"}>Blog</div>
+                <a className={'NavBlog'} href={"blog"}>Blog</a>
                     {/*</BlogArea>*/}
                 {/*</NavItem>*/}
 
@@ -42,7 +44,8 @@ const Navbar = () => {
 }
 
 function useScrollDirection() {
-    const [scrollDirection, setScrollDirection] = useState(null);
+    const [scrollDirection, setScrollDirection] = useState('up');
+    const [scrollPos, setScrollPos] = useState(0);
 
     useEffect(() => {
         let lastScrollY = window.pageYOffset;
@@ -55,6 +58,9 @@ function useScrollDirection() {
             }
             lastScrollY = scrollY > 0 ? scrollY : 0;
             console.log(direction);
+            console.log(scrollPos);
+
+            setScrollPos(window.scrollY);
         };
         window.addEventListener("scroll", updateScrollDirection); // add event listener
         return () => {
@@ -62,7 +68,7 @@ function useScrollDirection() {
         }
     }, [scrollDirection]);
 
-    return scrollDirection;
+    return [scrollDirection, scrollPos];
 };
 
 export default Navbar;
