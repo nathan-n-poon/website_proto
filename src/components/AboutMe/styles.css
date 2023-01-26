@@ -2,19 +2,24 @@
     --img_height: 375px;
 }
 
-#AboutMeContainer {
-    height: 100vh;
+#intro {
+    height: calc(100vh + 20px);
     width: 100vw;
-    background: #F9F8F2;
+    /*background: #F9F8F2;*/
+
+    background: rgb(138,137,137);
+    background: linear-gradient(0deg, rgba(138,137,137,1) 0%, rgba(238,238,238,1) 1%, rgba(249,248,242,1) 100%);
 
     display: grid;
     grid-template-columns: repeat(2, calc(var(--img_height)));
-    grid-template-rows: 160px var(--img_height) auto;
+    grid-template-rows: 160px var(--img_height) ;
     row-gap: 0;
     column-gap: 0;
 
     justify-content: space-evenly;
     align-items: center;
+
+    border-bottom: gradient grey;
 }
 
 #headshot {
@@ -22,7 +27,7 @@
     grid-row-start: 2;
 }
 
-#AboutMeContainer img {
+#intro img {
     height: var(--img_height);
     border-radius: 40px;
 }
@@ -34,21 +39,17 @@
 
     grid-row-start: 2;
     grid-column-start: 2;
-
 }
 
-#details {
-    grid-row-start: 3;
-    grid-column-start: 1;
-    grid-column-end: 3;
-
-    /*justify-content: center;*/
-/*align-content: center;*/
-    text-align: center;
+#description ul {
+    padding: 0;
 }
 
-#details li {
-    /*align-content: start;*/
+#description li {
     list-style-type: none;
-
+}
+#work_experience {
+    height: 100vh;
+    background: rgb(138,137,137);
+    background: linear-gradient(180deg, rgba(138,137,137,1) 0%, rgba(238,238,238,1) 1%, rgba(249,248,242,1) 100%);
 }
